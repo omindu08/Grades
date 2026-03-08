@@ -22,3 +22,14 @@ def calculate_average(grades):
 
 avg = calculate_average(students)
 print(f"\nClass Average: {avg:.2f}")
+
+def check_pass_fail(grades, threshold=50):
+    results = {}
+    for name, grade in grades.items():
+        results[name] = "Pass" if grade >= threshold else "Fail"
+    return results
+
+results = check_pass_fail(students)
+print("\nPass/Fail Results:")
+for name, result in results.items():
+    print(f"{name}: {result}")
