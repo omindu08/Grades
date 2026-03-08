@@ -16,3 +16,9 @@ for i in range(num):
 print("\n--- Student Grades ---")
 for name, grade in students.items():
     print(f"{name}: {grade}")
+
+def calculate_average(grades):
+    return sum(grades.values()) / len(grades)
+
+avg = calculate_average(students)
+print(f"\nClass Average: {avg:.2f}")
