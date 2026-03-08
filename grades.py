@@ -33,3 +33,16 @@ results = check_pass_fail(students)
 print("\nPass/Fail Results:")
 for name, result in results.items():
     print(f"{name}: {result}")
+
+def get_highest(grades):
+    top = max(grades, key=grades.get)
+    return top, grades[top]
+
+def get_lowest(grades):
+    bottom = min(grades, key=grades.get)
+    return bottom, grades[bottom]
+
+top_student, top_grade = get_highest(students)
+low_student, low_grade = get_lowest(students)
+print(f"\nHighest Score: {top_student} ({top_grade})")
+print(f"Lowest Score:  {low_student} ({low_grade})")
