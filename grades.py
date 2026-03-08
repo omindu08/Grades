@@ -29,10 +29,7 @@ def check_pass_fail(grades, threshold=50):
         results[name] = "Pass" if grade >= threshold else "Fail"
     return results
 
-results = check_pass_fail(students)
-print("\nPass/Fail Results:")
-for name, result in results.items():
-    print(f"{name}: {result}")
+
 
 def get_highest(grades):
     top = max(grades, key=grades.get)
@@ -41,6 +38,23 @@ def get_highest(grades):
 def get_lowest(grades):
     bottom = min(grades, key=grades.get)
     return bottom, grades[bottom]
+
+def get_letter_grade(score):
+    if score >= 80:
+        return "A"
+    elif score >= 70:
+        return "B"
+    elif score >= 60:
+        return "C"
+    elif score >= 50:
+        return "D"
+    else:
+        return "F"
+        
+results = check_pass_fail(students)
+print("\nPass/Fail Results:")
+for name, result in results.items():
+    print(f"{name}: {result} ({letter})")     
 
 top_student, top_grade = get_highest(students)
 low_student, low_grade = get_lowest(students)
